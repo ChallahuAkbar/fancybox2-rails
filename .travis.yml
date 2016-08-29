@@ -4,7 +4,6 @@ cache: bundler
 before_script: "sh -e /etc/init.d/xvfb start"
 script: "bundle exec rake travis"
 rvm:
-  - 2.1
   - 2.2
   - 2.3
 gemfile:
@@ -15,10 +14,4 @@ gemfile:
 matrix:
   allow_failures:
     - gemfile:
-      - gemfiles/rails-4.1.gemfile
       - gemfiles/rails-master.gemfile
-  exclude:
-    - rvm: 2.1
-      gemfile: gemfiles/rails-5.0.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/rails-master.gemfile
