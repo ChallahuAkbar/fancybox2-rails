@@ -4,8 +4,8 @@ cache: bundler
 before_script: "sh -e /etc/init.d/xvfb start"
 script: "bundle exec rake travis"
 rvm:
-  - 2.2
-  - 2.3
+  - 2.2.5
+  - 2.3.1
 gemfile:
   - Gemfile
   - gemfiles/rails-4.2.gemfile
