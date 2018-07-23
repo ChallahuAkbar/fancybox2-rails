@@ -1,17 +1,20 @@
-sudo: false
 language: ruby
 cache: bundler
-before_script: "sh -e /etc/init.d/xvfb start"
-script: "bundle exec rake travis"
 rvm:
-  - 2.2.5
-  - 2.3.1
+  - 2.3.7
+  - 2.4.4
+  - 2.5.1
+  - ruby-head
 gemfile:
   - Gemfile
   - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-5.0.gemfile
+  - gemfiles/rails-5.1.gemfile
+  - gemfiles/rails-5.2.gemfile
   - gemfiles/rails-master.gemfile
 matrix:
   allow_failures:
+    - rvm:
+      - ruby-head
     - gemfile:
       - gemfiles/rails-master.gemfile

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.licenses    = ["MIT", "Creative Commons by-nc"]
 
   s.summary     = "Use FancyBox 2 with Rails 4.2/5.0"
-  s.description = "This gem provides jQuery FancyBox 2 for your Rails 4.2/5.0 application. This gem is based on the gem for Fancybox 1.x by Chris Mytton"
+  s.description = "This gem provides jQuery FancyBox 2 for your Rails 4.2 or higher application. This gem is based on the gem for Fancybox 1.x by Chris Mytton"
   s.files       = Dir["{app,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
   s.version     = Fancybox2::Rails::VERSION
 
