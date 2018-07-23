@@ -16,7 +16,4 @@ gemfile:
   - gemfiles/rails-master.gemfile
 matrix:
   allow_failures:
-    - rvm:
-      - ruby-head
-    - gemfile:
-      - gemfiles/rails-master.gemfile
+    - gemfile: gemfiles/rails-master.gemfile
