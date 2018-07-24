@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Dummy::Application.routes.draw do
-  root :to => "fancybox#index"
+  root to: 'fancybox#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

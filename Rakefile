@@ -1,4 +1,5 @@
-# encoding: UTF-8
+# frozen_string_literal: true
+
 begin
   require 'bundler/setup'
 rescue LoadError
@@ -6,11 +7,10 @@ rescue LoadError
 end
 
 # For checking remote fancybox version.
-require 'open-uri'
 require 'json'
 
 # Path to fancybox bower.json.
-$fancybox_bower = "https://raw.github.com/fancyapps/fancyBox/master/bower.json"
+$fancybox_bower = URI.parse('https://raw.github.com/fancyapps/fancyBox/master/bower.json')
 
 Bundler::GemHelper.install_tasks
 
@@ -23,10 +23,10 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
-task :default => :test
+task default: :test
 
 namespace :fancybox do
-  desc "Get the local and remote fancybox versions."
+  desc 'Get the local and remote fancybox versions.'
   task :version do
     local = local_version
     remote = remote_version
@@ -34,9 +34,7 @@ namespace :fancybox do
     puts "local: v#{local}"
     puts "remote: v#{remote}"
 
-    if local != remote
-      warn "\nthere is a newer remote version available"
-    end
+    warn "\nthere is a newer remote version available" if local != remote
   end
 end
 
@@ -53,11 +51,11 @@ end
 #
 # Returns the String representing the remote version.
 def remote_version
-  JSON.parse(open($fancybox_bower).read)["version"]
+  JSON.parse($fancybox_bower.open.read)['version']
 end
 
 task :travis do
-  puts "Starting to run rake travis"
-  system("export DISPLAY=:99.0 && bundle exec rake")
-  raise "rake travis failed!" unless $?.exitstatus == 0
+  puts 'Starting to run rake travis'
+  system('export DISPLAY=:99.0 && bundle exec rake')
+  raise 'rake travis failed!' unless $CHILD_STATUS.exitstatus.zero?
 end

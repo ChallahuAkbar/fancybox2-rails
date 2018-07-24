@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gemspec :path => "../"
-gem "railties", :github => "rails/rails", :branch => "master"
-gem "rails", :github => "rails/rails", :branch => "master"
+gemspec path: '../'
+gem 'rails', github: 'rails/rails', branch: 'master'
+gem 'railties', github: 'rails/rails', branch: 'master'

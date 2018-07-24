@@ -1,14 +1,16 @@
-# Configure Rails Environment
-ENV["RAILS_ENV"] = "test"
+# frozen_string_literal: true
 
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
+# Configure Rails Environment
+ENV['RAILS_ENV'] = 'test'
+
+require File.expand_path('dummy/config/environment.rb', __dir__)
+require 'rails/test_help'
 
 Rails.backtrace_cleaner.remove_silencers!
 
 # Configure capybara for integration testing
-require "capybara/rails"
-require "capybara-webkit"
+require 'capybara/rails'
+require 'capybara-webkit'
 Capybara.default_driver   = :rack_test
 Capybara.default_selector = :css
 

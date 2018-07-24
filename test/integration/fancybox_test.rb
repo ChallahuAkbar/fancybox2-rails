@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class FancyboxTest < ActiveSupport::IntegrationCase
-  test "fancybox is loaded and works" do
+  test 'fancybox is loaded and works' do
     visit root_path
 
-    fancybox = find('#something', :visible => false)
+    fancybox = find('#something', visible: false)
 
     assert !fancybox.visible?
 
